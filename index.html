@@ -19,7 +19,7 @@
         }
 
          function testwebkit2() {
-            
+            try{
             alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n If you receive 'there's no enought memory error msgs' means the Bug is patched.");
             let font = new FontFace("font1", '', {},ConfirmWork1());
             
@@ -29,7 +29,11 @@
             //do something after the font is loaded
             NotWork();
             alert("webkit exploit patched !");
-        }
+             }
+            catch(e){
+                alert(e.message);
+            }
+                  }
 
             function ConfirmWork1() {
             
